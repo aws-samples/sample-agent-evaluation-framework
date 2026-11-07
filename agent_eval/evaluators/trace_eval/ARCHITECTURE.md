@@ -266,7 +266,7 @@ class TraceEvaluator:
 ```
 tests/
 ├── __init__.py                                  ✅ EXISTS
-├── test_module_imports.py                       ✅ EXISTS - Module import sanity (22 tests passing)
+├── test_module_imports.py                       ⚠️  TODO - Module import sanity tests
 ├── test_trace_eval_input_validator.py           ⚠️  TODO - Input validation tests
 ├── test_trace_eval_deterministic_metrics.py     ⚠️  TODO - Deterministic metrics tests
 ├── test_trace_eval_timestamp_policy.py          ⚠️  TODO - Timestamp trust policy tests
@@ -298,4 +298,4 @@ tests/
 4. **test_trace_eval_evidence.py**: Verify evidence selector extraction, scope enforcement, budget enforcement
 5. **test_trace_eval_outputs_schema.py**: Verify all output files match schemas and contain required fields
 
-See `agent_eval/tests/test_module_imports.py` for module import sanity tests (22 tests passing).
+No automated test suite ships with this sample yet; see `agent_eval/tests/README.md` for what is included.
