@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Local output (keep example outputs tracked)
+# ui/*_output/ — tracked for demo purposes
+
+# Pricing cache
+pricing_cache/
+.cache/
+
+# Security scan output (never commit raw scan results)
+security_review/
+
+# ASH scan output (never commit)
+.ash/ash_output/
+
+# Internal scanner metadata (never commit)
+.holmes/

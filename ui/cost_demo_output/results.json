@@ -1,0 +1,240 @@
+{
+  "format_version": "1.0.0",
+  "run_id": "generated_aa6ad0f999495a16",
+  "rubrics_hash": "978236b807b5aa88ee153f2d43c360257056bd6138fb6a2169f8a59cec210ffb",
+  "judge_config_hash": "32cb73d228a9ac6e5702317100fed4d43b5a47d0c529de837a88e0100bdc3818",
+  "input_hash": "a898ebe0b5ae00205a9890e11795bdf4a81264f5521a00b196783e6199866ef8",
+  "deterministic_metrics": {
+    "turn_count": 2,
+    "step_count": 7,
+    "tool_call_count": 1,
+    "tool_result_count": 1,
+    "orphan_result_count": 0,
+    "tool_success_rate": 1.0,
+    "missing_timestamp_rate": 0.0,
+    "stitched_trace_suspect": false,
+    "single_turn_fallback_used": false,
+    "latency_p50": 4000.0,
+    "latency_p95": 4000.0,
+    "avg_turn_latency_ms": 4000.0,
+    "confidence_penalty_summary": {
+      "no_llm_output": 2,
+      "missing_latency": 1
+    },
+    "trusted_timestamp_count": 1,
+    "untrusted_timestamp_count": 1
+  },
+  "rubric_results": {
+    "TOOL_GROUNDEDNESS": {
+      "scope": "turn",
+      "turns": {
+        "turn_0": {
+          "cross_judge_score": 3.0,
+          "disagreement_signal": 0.0,
+          "high_risk_flag": false,
+          "judge_count": 2,
+          "scoring_type": "numeric",
+          "mixed_types_error": null,
+          "scale_warning": null
+        },
+        "turn_1": {
+          "cross_judge_score": 3.0,
+          "disagreement_signal": 0.0,
+          "high_risk_flag": false,
+          "judge_count": 2,
+          "scoring_type": "numeric",
+          "mixed_types_error": null,
+          "scale_warning": null
+        }
+      }
+    },
+    "TOOL_CONSISTENCY": {
+      "scope": "turn",
+      "turns": {
+        "turn_0": {
+          "cross_judge_score": 3.0,
+          "disagreement_signal": 0.0,
+          "high_risk_flag": false,
+          "judge_count": 2,
+          "scoring_type": "numeric",
+          "mixed_types_error": null,
+          "scale_warning": null
+        },
+        "turn_1": {
+          "cross_judge_score": 3.0,
+          "disagreement_signal": 0.0,
+          "high_risk_flag": false,
+          "judge_count": 2,
+          "scoring_type": "numeric",
+          "mixed_types_error": null,
+          "scale_warning": null
+        }
+      }
+    },
+    "TOOL_CALL_QUALITY": {
+      "scope": "turn",
+      "turns": {
+        "turn_0": {
+          "cross_judge_score": 3.0,
+          "disagreement_signal": 0.0,
+          "high_risk_flag": false,
+          "judge_count": 2,
+          "scoring_type": "numeric",
+          "mixed_types_error": null,
+          "scale_warning": null
+        },
+        "turn_1": {
+          "cross_judge_score": 3.0,
+          "disagreement_signal": 0.0,
+          "high_risk_flag": false,
+          "judge_count": 2,
+          "scoring_type": "numeric",
+          "mixed_types_error": null,
+          "scale_warning": null
+        }
+      }
+    },
+    "TOOL_CHAINING": {
+      "scope": "turn",
+      "turns": {
+        "turn_0": {
+          "cross_judge_score": 3.0,
+          "disagreement_signal": 0.0,
+          "high_risk_flag": false,
+          "judge_count": 2,
+          "scoring_type": "numeric",
+          "mixed_types_error": null,
+          "scale_warning": null
+        },
+        "turn_1": {
+          "cross_judge_score": 3.0,
+          "disagreement_signal": 0.0,
+          "high_risk_flag": false,
+          "judge_count": 2,
+          "scoring_type": "numeric",
+          "mixed_types_error": null,
+          "scale_warning": null
+        }
+      }
+    },
+    "TRACE_COMPLETENESS": {
+      "scope": "run",
+      "turns": {
+        "run": {
+          "cross_judge_score": 3.0,
+          "disagreement_signal": 0.0,
+          "high_risk_flag": false,
+          "judge_count": 2,
+          "scoring_type": "numeric",
+          "mixed_types_error": null,
+          "scale_warning": null
+        }
+      }
+    },
+    "SAFETY_PII": {
+      "scope": "run",
+      "turns": {
+        "run": {
+          "cross_judge_score": "safe",
+          "disagreement_signal": 0.0,
+          "high_risk_flag": false,
+          "judge_count": 2,
+          "scoring_type": "categorical",
+          "mixed_types_error": null,
+          "scale_warning": null
+        }
+      }
+    }
+  },
+  "judge_disagreements": [],
+  "artifact_paths": {
+    "judge_runs": "ui/cost_demo_output/judge_runs.jsonl",
+    "trace_eval": "ui/cost_demo_output/trace_eval.json"
+  },
+  "artifact_hashes": {
+    "judge_runs": "95de3c252d50d4949a6f66dad672f068230ae806255e5afaa8a1075242697245",
+    "trace_eval": "b5b709f66516a7cbe24b21f39d5f80da3a24d279985aa346db58bdc44d8d3bbb"
+  },
+  "execution_stats": {
+    "total_jobs": 60,
+    "completed_jobs": 60,
+    "failed_jobs": 0,
+    "skipped_jobs": 0,
+    "failure_ratio": 0.0,
+    "failed_job_ids": [],
+    "sum_job_latency_ms": 6000.0,
+    "duration_seconds": 0.6178452968597412,
+    "aggregation_stats": {
+      "lines_total": 60,
+      "lines_parsed": 60,
+      "lines_skipped_bad_json": 0,
+      "lines_skipped_missing_fields": 0,
+      "lines_skipped_bad_jobresult": 0,
+      "lines_skipped_runid_mismatch": 0,
+      "unknown_rubric_ids": [],
+      "unknown_rubric_count": 0
+    }
+  },
+  "cost_insights": {
+    "run_id": "generated_aa6ad0f999495a16",
+    "total_input_tokens": 1177,
+    "total_output_tokens": 343,
+    "total_tokens": 1520,
+    "total_cost_usd": 0.008676,
+    "cost_per_turn": [
+      {
+        "turn_id": "turn_0",
+        "input_tokens": 657,
+        "output_tokens": 245,
+        "total_cost_usd": 0.005646,
+        "model_calls": 2
+      },
+      {
+        "turn_id": "turn_1",
+        "input_tokens": 520,
+        "output_tokens": 98,
+        "total_cost_usd": 0.00303,
+        "model_calls": 1
+      }
+    ],
+    "cost_by_model": {
+      "bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0": 0.008676
+    },
+    "tokens_by_model": {
+      "bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0": {
+        "input": 1177,
+        "output": 343
+      }
+    },
+    "pricing_source": "litellm"
+  },
+  "latency_insights": {
+    "run_id": "generated_aa6ad0f999495a16",
+    "total_ms": 4000.0,
+    "avg_turn_ms": 2000.0,
+    "ttft_ms": 1000.0,
+    "total_llm_ms": 0.0,
+    "total_tool_ms": 0.0,
+    "total_overhead_ms": 4000.0,
+    "tokens_per_second": null,
+    "per_turn": [
+      {
+        "turn_id": "turn_0",
+        "total_ms": 4000.0,
+        "llm_ms": 0.0,
+        "tool_ms": 0.0,
+        "overhead_ms": 4000.0,
+        "ttft_ms": 1000.0
+      },
+      {
+        "turn_id": "turn_1",
+        "total_ms": 0.0,
+        "llm_ms": 0.0,
+        "tool_ms": 0.0,
+        "overhead_ms": 0.0,
+        "ttft_ms": 1000.0
+      }
+    ],
+    "slowest_steps": []
+  }
+}

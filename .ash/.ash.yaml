@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/awslabs/automated-security-helper/refs/heads/main/automated_security_helper/schemas/AshConfig.json
+#
+# ASH (Automated Security Helper) v3 configuration
+# Suppressions below are findings manually triaged as false positives during the
+# Security review (2026-08-03). rule_id and path values are reconciled
+# against actual ASH v3.5.9 scan output. Each carries a reason per ASH best practice.
+project_name: agent-evaluation-framework
+
+global_settings:
+  severity_threshold: MEDIUM
+
+  suppressions:
+    # ─────────────────────────────────────────────────────────────────
+    # detect-secrets: SECRET-HEX-HIGH-ENTROPY-STRING (27 findings)
+    # SHA-256 reproducibility hashes + W3C Trace Context IDs. No credentials.
+    # ─────────────────────────────────────────────────────────────────
+    - rule_id: 'SECRET-HEX-HIGH-ENTROPY-STRING'
+      path: 'ui/**/results.json'
+      reason: >-
+        SHA-256 hashes (rubrics_hash, judge_config_hash, input_hash,
+        artifact_hashes) written to evaluation output for reproducibility.
+        No credential material. Security review 2026-08-03.
+    - rule_id: 'SECRET-HEX-HIGH-ENTROPY-STRING'
+      path: 'examples/sample_traces/trace_otel_format.json'
+      reason: >-
+        W3C Trace Context identifiers (traceId 128-bit / spanId 64-bit hex),
+        not secrets. Security review 2026-08-03.
+    - rule_id: 'SECRET-HEX-HIGH-ENTROPY-STRING'
+      path: 'agent_eval/tools/agentcore_pipeline/README.md'
+      reason: >-
+        Hex identifiers in documentation examples/placeholders, not secrets.
+        Security review 2026-08-03.
+
+    # ─────────────────────────────────────────────────────────────────
+    # detect-secrets: SECRET-BASE64-HIGH-ENTROPY-STRING (5 findings)
+    # CloudWatch log paths, AgentCore toolUseId strings, doc placeholders.
+    # ─────────────────────────────────────────────────────────────────
+    - rule_id: 'SECRET-BASE64-HIGH-ENTROPY-STRING'
+      path: 'agent_eval/tools/agentcore_pipeline/README.md'
+      reason: >-
+        CloudWatch log-group paths and documentation placeholders, not
+        Base64-encoded secrets. Security review 2026-08-03.
+    - rule_id: 'SECRET-BASE64-HIGH-ENTROPY-STRING'
+      path: 'agent_eval/tools/agentcore_pipeline/run_from_agentcore_arn.py'
+      reason: >-
+        AgentCore toolUseId string, not a Base64-encoded secret.
+        Security review 2026-08-03.
+    - rule_id: 'SECRET-BASE64-HIGH-ENTROPY-STRING'
+      path: 'guides/OBSERVABILITY_SETUP.md'
+      reason: 'Documentation placeholder, not a secret. Security review 2026-08-03.'
+
+    # ─────────────────────────────────────────────────────────────────
+    # bandit — Low-severity findings (below the MEDIUM threshold, so already
+    # non-actionable). Suppressed for audit clarity. Only rules that actually
+    # fire are listed (B105 is skipped globally via .bandit; B310 does not fire).
+    # ─────────────────────────────────────────────────────────────────
+    - rule_id: 'B101'
+      path: 'test-fixtures/baseline/verify_adapter_format.py'
+      reason: >-
+        Asserts are the verification mechanism of this test utility; -O
+        stripping is not a concern here. Security review 2026-08-03.
+    - rule_id: 'B311'
+      path: 'agent_eval/evaluators/trace_eval/judging/retry_policy.py'
+      reason: >-
+        random.uniform/random for retry jitter (exponential backoff).
+        Non-cryptographic randomness is correct; no security decision depends
+        on it. Security review 2026-08-03.
+    - rule_id: 'B311'
+      path: 'agent_eval/tools/cloudwatch_logs_fixture_exporter.py'
+      reason: 'Non-crypto RNG for retry jitter. Security review 2026-08-03.'
+
+reporters:
+  markdown:
+    enabled: true
+    options:
+      include_detailed_findings: true

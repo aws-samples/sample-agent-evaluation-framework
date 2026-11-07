@@ -1,0 +1,5 @@
+[bandit]
+# B105: Suppress false positives for "possible hardcoded password" on string
+# comparisons like token_type == "input"/"output"/"unknown" and regex patterns.
+# These are pricing data classification labels, not credentials.
+skips = B105
