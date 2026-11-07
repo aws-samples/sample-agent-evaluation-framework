@@ -44,5 +44,3 @@ security_review/
 # ASH scan output (never commit)
 .ash/ash_output/
 
-# Internal scanner metadata (never commit)
-.holmes/
