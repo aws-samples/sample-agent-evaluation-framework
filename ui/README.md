@@ -5,8 +5,10 @@ Streamlit UI for configuring, running, and visualizing agent evaluations.
 > ⚠️ **Security Notice — Local Development Tool Only**
 >
 > This dashboard has **no authentication or authorization**. It reads arbitrary local
-> file paths provided via the UI text input. It is designed to run on `localhost`
-> (Streamlit's default bind address `127.0.0.1`) for individual developer use.
+> file paths provided via the UI text input. It is designed to run on `localhost` only, for
+> individual developer use. The repository's `.streamlit/config.toml` binds it to
+> `127.0.0.1` (Streamlit's own default listens on all interfaces), and `ui/app.py`
+> refuses to load if the server is bound to any non-loopback address.
 >
 > **Do NOT expose this dashboard on a network** (e.g. `--server.address 0.0.0.0`)
 > without adding your own authentication layer — doing so would allow any network
@@ -16,8 +18,8 @@ Streamlit UI for configuring, running, and visualizing agent evaluations.
 
 ```bash
 pip install streamlit altair pandas pyyaml
-cd agent-eval
-streamlit run ui/app.py
+cd sample-agent-evaluation-framework
+streamlit run ui/app.py --server.address 127.0.0.1
 ```
 
 ## Navigation

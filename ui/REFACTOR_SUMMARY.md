@@ -103,7 +103,7 @@ Net reduction of 164 lines despite adding two new features (judge builder + wire
 
 ```bash
 cd agent-eval
-streamlit run ui/app.py
+streamlit run ui/app.py --server.address 127.0.0.1
 ```
 
 1. **Setup → Rubric Configuration:** Create a rubric or import `test-fixtures/rubrics.default.yaml`

@@ -182,6 +182,26 @@ def run_inline_evaluation(trace_data: dict, app_dir: Path) -> Optional[Path]:
 
 st.set_page_config(page_title="Agent Eval Dashboard", page_icon="🔍", layout="wide")
 
+# ---------------------------------------------------------------------------
+# Loopback-only guard
+# ---------------------------------------------------------------------------
+# The dashboard has no authentication and reads/writes arbitrary local paths
+# entered in the UI. Streamlit listens on all interfaces when server.address is
+# unset, so refuse to render anything unless the server is bound to loopback.
+# Exposing the dashboard on a network requires your own authentication layer in
+# front of it; only then set AGENT_EVAL_ALLOW_NON_LOOPBACK=1 to skip this check.
+_LOOPBACK_ADDRESSES = {"127.0.0.1", "localhost", "::1"}
+_bind_address = (st.get_option("server.address") or "").strip()
+if _bind_address not in _LOOPBACK_ADDRESSES and __import__("os").environ.get(
+    "AGENT_EVAL_ALLOW_NON_LOOPBACK"
+) != "1":
+    st.error(
+        "This dashboard has no authentication and must listen on localhost only. "
+        f"Current server.address: `{_bind_address or 'unset (all interfaces)'}`.\n\n"
+        "Restart it with: `streamlit run ui/app.py --server.address 127.0.0.1`"
+    )
+    st.stop()
+
 query_params = st.query_params
 url_run_id = query_params.get("run", None)
 

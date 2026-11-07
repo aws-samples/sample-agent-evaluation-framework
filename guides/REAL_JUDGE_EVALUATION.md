@@ -104,7 +104,7 @@ python -m agent_eval.cli \
   --verbose
 
 # View in dashboard
-streamlit run ui/app.py
+streamlit run ui/app.py --server.address 127.0.0.1
 ```
 
 Requires AWS credentials with `bedrock:InvokeModel` permission and Claude Sonnet model access enabled in your region.

@@ -227,7 +227,7 @@ def main():
     (output_path / "cloudwatch_eval_summary.json").write_text(json.dumps(summary, indent=2))
 
     if args.verbose:
-        print(f"\nView results: streamlit run ui/app.py")
+        print(f"\nView results: streamlit run ui/app.py --server.address 127.0.0.1")
         print(f"  → Point to: {output_path}")
 
     return 0 if succeeded == len(results) else 1

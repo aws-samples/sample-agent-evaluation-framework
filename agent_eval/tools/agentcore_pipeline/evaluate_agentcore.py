@@ -262,7 +262,7 @@ def main():
 
     if args.verbose:
         print(f"\nView results in dashboard:")
-        print(f"  streamlit run ui/app.py")
+        print(f"  streamlit run ui/app.py --server.address 127.0.0.1")
         print(f"  → Point to: {output_path / 'evaluations'}")
 
     return 0 if failed == 0 else 1

@@ -79,7 +79,7 @@ AgentCore Runtime ARN
     └── results.json
              ↓
     View in Dashboard
-    (streamlit run ui/app.py)
+    (streamlit run ui/app.py --server.address 127.0.0.1)
 ```
 
 ## Output

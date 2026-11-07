@@ -70,7 +70,7 @@ python -m agent_eval.cli \
 ## Viewing Results
 
 ```bash
-streamlit run ui/app.py
+streamlit run ui/app.py --server.address 127.0.0.1
 ```
 
 ## Key Findings

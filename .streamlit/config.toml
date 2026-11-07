@@ -1,0 +1,15 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+#
+# Streamlit reads this file when `streamlit run ui/app.py` is launched from the
+# repository root. The dashboard has no authentication and reads/writes local
+# paths entered in the UI, so it must only listen on the loopback interface.
+# Streamlit's own default (server.address unset) listens on all interfaces.
+# ui/app.py also refuses to start if the bind address is not loopback.
+
+[server]
+address = "127.0.0.1"
+headless = true
+
+[browser]
+gatherUsageStats = false
