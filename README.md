@@ -145,8 +145,8 @@ Examples:
 Requires Python 3.10+
 
 ```bash
-git clone https://github.com/<org>/agent-eval.git
-cd agent-eval
+git clone https://github.com/aws-samples/sample-agent-evaluation-framework.git
+cd sample-agent-evaluation-framework
 pip install -e .
 ```
 

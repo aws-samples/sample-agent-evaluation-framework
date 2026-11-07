@@ -5,7 +5,7 @@ Quick reference guide for executing the adapter production gate tests.
 ## Quick Start
 
 ```bash
-cd agent-eval
+cd sample-agent-evaluation-framework
 python -m pytest agent_eval/tests/test_production_gates.py -v
 ```
 
@@ -116,14 +116,14 @@ If tests fail, check:
 ```yaml
 - name: Run Production Gate Tests
   run: |
-    cd agent-eval
+    cd sample-agent-evaluation-framework
     python -m pytest agent_eval/tests/test_production_gates.py -v --junitxml=test-results.xml
 ```
 
 ### Pre-commit Hook
 ```bash
 #!/bin/bash
-cd agent-eval
+cd sample-agent-evaluation-framework
 python -m pytest agent_eval/tests/test_production_gates.py -q
 ```
 

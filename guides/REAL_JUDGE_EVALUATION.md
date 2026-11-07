@@ -93,8 +93,7 @@ Agent encounters permission denied, requests access, retries, and succeeds.
 ## How to Reproduce
 
 ```bash
-cd agent-eval
-
+cd sample-agent-evaluation-framework
 # Run on a single trace
 python -m agent_eval.cli \
   --input ui/example_traces/hallucination-risk.json \

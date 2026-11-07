@@ -236,7 +236,7 @@ with st.sidebar:
     - Upload and evaluate traces
     - Analyze results & trends
 
-    [View on GitHub](https://github.com/aws-samples/agent-eval)
+    [View on GitHub](https://github.com/aws-samples/sample-agent-evaluation-framework)
     """)
     st.divider()
 

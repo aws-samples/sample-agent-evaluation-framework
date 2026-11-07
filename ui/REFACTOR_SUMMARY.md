@@ -102,7 +102,7 @@ Net reduction of 164 lines despite adding two new features (judge builder + wire
 ## How to Test
 
 ```bash
-cd agent-eval
+cd sample-agent-evaluation-framework
 streamlit run ui/app.py --server.address 127.0.0.1
 ```
 
